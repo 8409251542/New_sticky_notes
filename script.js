@@ -9,14 +9,18 @@ function addNotes(){
     let massage =document.getElementById("message").value;
     let noteTitle =document.getElementById("noteTitle").value;
     let date =new Date().toLocaleString();
-    console.log(date.toString());
+   // console.log(date.toString());
     // NotesData.push({
     //     "Head":noteTitle,
     //     "msg":massage,
     //     "color":colorBg,
     //     "date":date
     // });
-    let div =document.createElement('div');
+    if (massage==""||noteTitle=="") {
+        alert("Enter the reqired values!")
+        
+    } else {
+        let div =document.createElement('div');
         div.className="article-card";
         div.style.backgroundColor=colorBg;
         div.innerHTML=` <div  class="closeModal">X</div>
@@ -35,6 +39,8 @@ function addNotes(){
         document.getElementById("noteTitle").value = "";
     editNotes();
     closeNotes();
+        
+    }
     //move("article-card");
 }
 
